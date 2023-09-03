@@ -24,7 +24,7 @@ scanner.on("discover", async peripheral => {
     await lamp.setBrightness(100)
     // if your lamp does not support colors, you can use
     // .setTemperature(100) instead
-    await lamp.setRGB("#ffffff")
+    await lamp.setRGBColor("#ffffff")
 
     await lamp.disconnect()
     console.log("Disconnected")

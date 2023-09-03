@@ -97,7 +97,7 @@ export class Client {
         ]), false)
     }
     async getTemperature(){
-        const value = await this.temperatureCharacteristic?.readAsync()
+        const value = await this.temperatureCharacteristic?.readAsync() ?? Buffer.alloc(2)
         return (value.readUint16LE(0) - 153) / 347 * 100
     }
 

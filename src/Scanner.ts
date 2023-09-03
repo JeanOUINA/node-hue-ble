@@ -1,5 +1,5 @@
 import { EEventEmitter } from "./events.js";
-import noble from "@abandonware/noble"
+import noble, { Peripheral } from "@abandonware/noble"
 
 export default class Scanner extends EEventEmitter<{
     discover: [noble.Peripheral]
@@ -24,7 +24,7 @@ export default class Scanner extends EEventEmitter<{
             })
         }
         await noble.startScanningAsync(this.services, false)
-        const listener = (peripheral) => {
+        const listener = (peripheral:Peripheral) => {
             this.emit("discover", peripheral)
         }
         noble.on("discover", listener)

@@ -26,6 +26,7 @@ module.exports = {
         "no-empty": ["error", {
             allowEmptyCatch: true
         }],
-        "@typescript-eslint/no-this-alias": "off"
+        "@typescript-eslint/no-this-alias": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
     }
 };
